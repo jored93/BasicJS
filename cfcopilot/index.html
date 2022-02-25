@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/99931e1b2f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>CF_Copilot</title>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 text-center">
+                <div class="form-group">
+                    <h1 for="index">Index:</h1>
+                    <input type="text" class="form-control" name="index" id="index">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-primary" onclick="procesar()">Procesar</button>
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <h1 for="mb">Velocidad:</h1>
+                    <input type="text" class="form-control" name="mb_input" id="mb_input">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success" onclick="procesar_mb()">Procesar</button>
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <h1 for="niveles">Puerto PON</h1>
+                    <input type="text" class="form-control" name="pon_input" id="pon_input">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-warning" onclick="procesar_pon()">Procesar</button>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <h1>-COMANDOS-</h1>
+                <h3>Config WIFI</h3>
+                <p id="p1">show gp int gp<label id="l1">_</label> onu wifi 1 config
+                    <a class="btn btn-outline-success" onclick="cpConfigWifi('p1')"><i class="far fa-copy"></i></a>
+                </p>
+                
+
+                <h3>Config WAN</h3>
+                <p id="pwan">show gp int gp<label id="l2">_</label> onu wan 1 config
+                    <a class="btn btn-outline-success" onclick="cpConfigWan('pwan')"><i class="far fa-copy"></i></a>
+                </p>
+
+                <h3>Basic info</h3>
+                <p id="pbi">show gp int gp<label id="l3">_</label> onu basic-info
+                    <a class="btn btn-outline-success" onclick="cpBasicInfo('pbi')"><i class="far fa-copy"></i></a>
+                </p>
+
+                <h3>Configuracion de interface</h3>
+                <p id="prc">show run  int gp <label id="l4">_</label>
+                    <a class="btn btn-outline-success" onclick="cpRunConfig('prc')"><i class="far fa-copy"></i></a>
+                </p>
+
+                <h3>Configuracion de velocidad</h3>
+                    <p id="pcmb">int gp <label id="l1v">_</label> <br>
+                    gpon onu tcont-virtual-port-bind-profile T<label id="l2v">_</label>M <br>
+                    gpon onu virtual-port 1 downstream rate-limit kbps <label id="l3v">_</label></p>
+                    <!-- <a class="btn btn-outline-success" onclick="cpConfigMb('pcmb')"><i class="far fa-copy"></i></a> -->
+            </div>
+
+            <div class="col-lg-4">
+                <h1>-NIVELES PON-</h1>
+                <h3>Forward</h3>
+                <p id="pfi">show gp onu-optical-transceiver-diagnosis int gp<label id="l1p">_</label>
+                    <a class="btn btn-outline-success" onclick="cpFwInfo('pfi')"><i class="far fa-copy"></i></a>
+                </p>
+                
+                <h3>Return</h3>
+                <p id="pri">show gp optical-transceiver-diagnosis int gp<label id="l2p">_</label>
+                    <a class="btn btn-outline-success" onclick="cpRtInfo('pri')"><i class="far fa-copy"></i></a>
+                </p>
+
+                <h1>-INFORMACION PON-</h1>
+                <h3>Return</h3>
+                <p id="ppi">show gp onu-information interface gp<label id="l3p">_</label>
+                    <a class="btn btn-outline-success" onclick="cPonInfo('ppi')"><i class="far fa-copy"></i></a>
+                </p>
+
+                <h3>Return</h3>
+                <p id="pdi">show gp onu-description interface gp<label id="l4p">_</label>
+                    <a class="btn btn-outline-success" onclick="cPonDesc('pdi')"><i class="far fa-copy"></i></a>
+                </p> 
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

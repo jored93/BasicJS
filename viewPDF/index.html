@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/visor.css">
+    <title>Visor PDF</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <h6>Visor de PDF Side by Side</h6>
+        </header>
+        <div id="my_pdf_viewer" class="row">
+            <div class="col-lg-4">
+                <input id="myfiles" multiple type="file">
+                <!-- <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02">
+                      <option selected>Seleccionar archivo</option>
+                      <option value="1">Documento 1</option>
+                      <option value="2">Documento 2</option>
+                      <option value="3">Documento 3</option>
+                    </select>
+                    <div class="input-group-append">
+                      <label class="input-group-text" for="inputGroupSelect02">Visualizar</label>
+                    </div>
+                  </div> -->
+            </div>
+            <div class="col-lg-8">
+                <div id="canvas_container">
+                    <canvas id="pdf_renderer"></canvas>
+                </div>
+                <div id="navigation_controls" class="text-center separate">
+                    <button class="btn btn-outline-success" id="go_previous"><<</button>
+                    <input id="current_page" value="1" type="number" />
+                    <button class="btn btn-outline-info" id="go_next">>></button>
+                </div>
+                <div id="zoom_controls" class="text-center separate">  
+                    <button class="btn btn-outline-info" id="zoom_out">-</button>
+                    <button class="btn btn-outline-success" id="zoom_in">+</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                
+            </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="js/visor.js"></script>
+</body>
+</html>
